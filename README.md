@@ -6,7 +6,7 @@
 
 This is my online CV. [Click here](https://www.rugile.website) to see it.
 
-While the main purpose of this project was to represent myself and show my performance level, I also learned more about animation.
+While the main purpose of this project was to represent myself and show my performance level, I also improved my animation skills.
 
 ## Used for the first time
 
