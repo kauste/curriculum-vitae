@@ -15,6 +15,7 @@ While the main purpose of this project was to represent myself and show my perfo
 
 ## Deepen my knowledge
 
+- @keyframes
 - scss
 - Grid
 - Javascript optimisation
