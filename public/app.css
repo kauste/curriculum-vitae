@@ -601,10 +601,17 @@ footer .pdf-wrapper:hover {
     height: -moz-fit-content;
     height: fit-content;
   }
+  footer {
+    display: inline-block;
+    width: 100%;
+  }
+  footer .contacts {
+    width: 70%;
+    float: left;
+  }
   footer .pdf-wrapper {
-    position: absolute;
-    right: 0;
-    bottom: 3%;
+    position: relative;
+    float: right;
     padding: 4px;
   }
   footer .pdf-wrapper .pdf-svg {
@@ -613,11 +620,14 @@ footer .pdf-wrapper:hover {
   }
 }
 @media (max-width: 496px) {
+  body {
+    font-size: 0.8em;
+  }
   .first-section .img-container {
     height: 300px;
     width: 100%;
     position: absolute;
-    top: 120px;
+    top: calc(14% + 25px);
     left: 0;
     display: flex;
     justify-content: center;
@@ -638,6 +648,11 @@ footer .pdf-wrapper:hover {
     z-index: 3;
     left: calc(50% + 50px);
     top: -100px;
+  }
+  footer .contacts {
+    width: 60%;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 }
 @keyframes around-animation {

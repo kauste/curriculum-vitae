@@ -3,6 +3,7 @@
     --heading-spacing: 1.7px;
     --main-family: 'Work Sans', sans-serif;
 }
+$xs-screen:320px;
 $s-screen: 496px;
 $m-screen: 768px;
 $l-screen: 960px;
@@ -589,10 +590,15 @@ footer{
         }
     }
     footer{
+        display: inline-block;
+        width: 100%;
+        .contacts{
+            width: 70%;
+            float: left;
+        }
         .pdf-wrapper{
-            position:absolute;
-            right: 0;
-            bottom: 3%;
+            position: relative;
+            float: right;
             padding: 4px;
             .pdf-svg{
                 height:50px;
@@ -601,13 +607,17 @@ footer{
         }
     }
 }
+
 @media(max-width: $s-screen){
+    body{
+        font-size: 0.8em;
+    }
     .first-section{
         .img-container{
             height:300px;
             width: 100%;
             position:absolute;
-            top: 120px;
+            top: calc(14% + 25px);
             left: 0;
             display:flex;
             justify-content: center;
@@ -629,13 +639,18 @@ footer{
                     left:calc(100% / 2 + 50px);
                     top: -100px;
                 }
-                // &:after{
-                //     display:inline-block;
-                //     right:20px;
-                //     z-index: 3;
-                // }
             }
         }
+    }
+    footer{
+        .contacts{
+            width: 60%;
+            flex-wrap: wrap;
+            gap:10px;
+        }
+        // .pdf-wrapper{
+        //     position: absolute;
+        // }
     }
 }
 
