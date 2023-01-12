@@ -19,6 +19,7 @@ While the main purpose of this project was to represent myself and show my perfo
 - scss
 - Grid
 - Javascript optimisation
+- Responsive design
 
 ## Authors
 
