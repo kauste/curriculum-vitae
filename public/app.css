@@ -1,7 +1,8 @@
 :root {
-  --heading-family: "Playfair Display", serif;
+  --heading-family: "Comfortaa", cursive;
   --heading-spacing: 1.7px;
-  --main-family: "Work Sans", sans-serif;
+  --main-spacing: 0.23px;
+  --main-family: "Roboto Serif", serif;
 }
 
 @property --angle {
@@ -24,6 +25,7 @@ body * {
 
 body {
   font-family: var(--main-family);
+  letter-spacing: var(--main-spacing);
 }
 
 .heading {
@@ -31,7 +33,7 @@ body {
   letter-spacing: var(--heading-spacing);
 }
 
-section {
+section:not(.first-section) {
   padding: 7% 8%;
 }
 
@@ -41,7 +43,7 @@ a, button {
 
 h3 {
   font-size: 40px;
-  font-weight: 200;
+  font-weight: 300;
   text-align: center;
 }
 
@@ -100,10 +102,22 @@ h3 {
 }
 
 .mail {
-  color: #0289e4;
+  color: rgb(250, 217, 55);
   text-transform: lowercase;
 }
 .mail:hover {
+  color: transparent;
+  background: -webkit-linear-gradient(30deg, #0289e4 var(--percentage), rgb(250, 217, 55) 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: color-change ease-in-out 1s forwards;
+}
+
+.mail2 {
+  color: #0289e4;
+  text-transform: lowercase;
+}
+.mail2:hover {
   color: transparent;
   background: -webkit-linear-gradient(30deg, rgb(250, 217, 55) var(--percentage), #0289e4 50%);
   -webkit-background-clip: text;
@@ -112,7 +126,6 @@ h3 {
 }
 
 .first-section {
-  background-color: #16343E;
   display: flex;
   gap: 100px;
   justify-content: center;
@@ -120,32 +133,43 @@ h3 {
   color: #fff;
 }
 .first-section .img-container {
+  box-sizing: border-box;
   width: 40%;
-  height: 400px;
+  height: 120%;
   display: flex;
   justify-content: center;
   position: absolute;
   top: 0;
   left: 0;
+  border: solid 8px #16343E;
+  border-top: none;
+  border-left: none;
+  padding: 200px 80px 200px 12%;
+  background: #fff;
 }
 .first-section .img-container img {
-  background-color: #183b46;
-  width: 100%;
-  height: 950px;
+  width: 350px;
+  height: 525px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  padding: 200px 140px;
+  background-color: #fff;
+  background: transparent;
+  box-shadow: -44px -44px 0 -36px #fff, 0 0 0 8px #16343E, -80px -80px 0 2px #16343E, -80px -80px 15px -2px #fff;
+  animation: appear2 ease 0.8s;
 }
 .first-section .main-info {
   height: 600px;
   display: flex;
-  margin-left: 40%;
+  margin-left: calc(40% - 8px);
+  padding: 7% 8% 3% 5%;
+  background-color: #16343E;
+  height: -moz-fit-content;
+  height: fit-content;
   flex-direction: column;
   justify-content: center;
   gap: 20px;
-  margin-right: 4vw;
 }
 .first-section .main-info .person {
   display: inline-block;
@@ -170,36 +194,22 @@ h3 {
   position: relative;
   z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: flex-end;
   justify-content: flex-end;
   right: -25px;
   top: 0;
   gap: 8px;
 }
+.first-section .main-info .person .person-right-column .media {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
 .first-section .main-info .project-container {
   padding: 20px;
   position: relative;
-}
-.first-section .main-info .project-container:before {
-  content: "";
-  display: inline-block;
-  width: 100px;
-  height: 100px;
-  border: #E0BC09 1px solid;
-  position: absolute;
-  border-radius: 50%;
-  top: -40px;
-  right: -85px;
-}
-.first-section .main-info .project-container:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  border: #1878B9 solid 1px;
-  right: -40px;
-  top: -85px;
+  border-top: #fff solid 6px;
 }
 .first-section .main-info .project-container .heading {
   margin-bottom: 10px;
@@ -207,6 +217,7 @@ h3 {
   text-transform: uppercase;
 }
 .first-section .main-info .project-container .projects-list {
+  animation: appear ease 0.8s;
   list-style: none;
 }
 .first-section .main-info .project-container .projects-list li {
@@ -215,13 +226,13 @@ h3 {
 }
 .first-section .main-info .project-container .projects-list li .project-title {
   padding: 3px;
-  font-weight: 700;
+  font-weight: 500;
 }
 .first-section .main-info .project-container .projects-list li small {
   font-style: italic;
   margin-top: 5px;
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 40px;
   font-weight: 100;
   color: #A6ADB0;
 }
@@ -322,7 +333,7 @@ h3 {
 }
 .education-section .h3-wrapper h3 {
   font-size: 40px;
-  font-weight: 200;
+  font-weight: 300;
   padding-right: 10px;
 }
 .education-section .education-main {
@@ -384,7 +395,7 @@ h3 {
 }
 .work-section .h3-wrapper h3 {
   font-size: 40px;
-  font-weight: 200;
+  font-weight: 300;
   padding-right: 10px;
 }
 .work-section .work-main {
@@ -472,48 +483,45 @@ footer .pdf-wrapper:hover {
   body {
     font-size: 0.9em;
   }
-  section {
-    padding: 8% 6%;
+  section:not(.first-section) {
+    padding: 6% 4% 4% 4%;
   }
   .first-section .img-container {
-    width: 30%;
-    height: 360px;
+    height: 100%;
+    padding: 0 0 0 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .first-section .img-container img {
-    width: 360px;
-    height: 540px;
+    width: 250px;
+    height: 375px;
   }
   .first-section .main-info {
-    margin-right: 5vw;
+    padding: 4% 4% 2% 3%;
   }
 }
 @media (max-width: 960px) {
-  .first-section {
-    gap: 50px;
+  section:not(.first-section) {
+    padding: 8% 7%;
   }
   .first-section .img-container {
-    width: 20%;
-    height: 180px;
-    position: relative;
-  }
-  .first-section .img-container:before {
-    content: "";
-    width: 180px;
-    height: 270px;
-    display: inline-block;
-    position: absolute;
-    border: #1878B9 dashed 1px;
-    top: -28px;
-    left: -34px;
+    width: 100%;
+    height: 400px;
+    border: none;
+    box-sizing: content-box;
+    padding-top: 80px;
+    padding-left: 0;
   }
   .first-section .img-container img {
-    width: 180px;
-    height: 270px;
-    border: #E0BC09 solid 1px;
-    z-index: 2;
+    height: 300px;
+    width: 200px;
   }
   .first-section .main-info {
     margin-right: 0;
+    margin-top: 480px;
+    margin-left: 0;
+    padding: 8% 7%;
   }
   .first-section .main-info .person .person-right-column {
     right: 0;
@@ -557,7 +565,7 @@ footer .pdf-wrapper:hover {
     justify-content: center;
   }
   .work-section .work-main .one-work .work-years-position .work-position {
-    font-weight: 700;
+    font-weight: 500;
   }
   .work-section .work-main .one-work .place-responsibilities .work-place {
     border: none;
@@ -578,14 +586,14 @@ footer .pdf-wrapper:hover {
   }
 }
 @media (max-width: 768px) {
-  section, footer {
-    padding: 4% 3%;
+  section:not(.first-section), footer {
+    padding: 40px 3%;
   }
   .first-section {
     position: relative;
   }
   .first-section .img-container {
-    height: 108px;
+    height: 200px;
     position: absolute;
     bottom: 65%;
     right: 12%;
@@ -596,7 +604,6 @@ footer .pdf-wrapper:hover {
   .first-section .img-container img {
     width: 108px;
     height: 144px;
-    border: #1878B9 dashed 2px;
     z-index: 2;
     padding: 0;
   }
@@ -604,6 +611,25 @@ footer .pdf-wrapper:hover {
     gap: 60px;
     height: -moz-fit-content;
     height: fit-content;
+    margin-top: 300px;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 40px 3%;
+  }
+  .first-section .main-info .person {
+    position: relative;
+  }
+  .first-section .main-info .person .person-right-column {
+    position: static;
+    width: -moz-fit-content;
+    width: fit-content;
+    float: left;
+    margin: 10px 0 0 0;
+  }
+  .first-section .main-info .person .person-right-column .media {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   footer {
     display: inline-block;
@@ -627,31 +653,14 @@ footer .pdf-wrapper:hover {
   body {
     font-size: 0.8em;
   }
-  .first-section .img-container {
-    height: 300px;
-    width: 100%;
-    position: absolute;
-    top: calc(14% + 25px);
-    left: 0;
-    display: flex;
-    justify-content: center;
-  }
-  .first-section .img-container img {
-    padding: 10px;
-    width: 200px;
-    height: 300px;
-  }
   .first-section .main-info {
     gap: 40px;
   }
-  .first-section .main-info .person {
-    margin-bottom: 300px;
+  .first-section .main-info .project-container .projects-list li small {
+    margin-left: 0;
   }
-  .first-section .main-info .project-container:before {
-    display: inline-block;
-    z-index: 3;
-    left: calc(50% + 50px);
-    top: -100px;
+  .work-section .work-main .one-work {
+    padding: 10px 0;
   }
   footer .contacts {
     width: 60%;
@@ -702,5 +711,24 @@ footer .pdf-wrapper:hover {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes appear {
+  from {
+    margin-bottom: 50px;
+    opacity: 0.6;
+    overflow: hidden;
+  }
+  to {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+}
+@keyframes appear2 {
+  from {
+    box-shadow: -44px -44px 0 -40px #fff, 0 0 0 0px hsl(194deg, 48%, 16%), -40px -40px 0 2px #16343E, -80px -80px 15px -2px #fff;
+  }
+  to {
+    box-shadow: -44px -44px 0 -36px #fff, 0 0 0 8px #16343E, -80px -80px 0 2px #16343E, -80px -80px 15px -2px #fff;
   }
 }
