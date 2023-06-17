@@ -141,28 +141,24 @@ h3{
     }
 }
 .mail{
-    color: rgba(250,217,55,1);
-    text-transform: lowercase;
-    &:hover{
-        color:transparent;
-        background: -webkit-linear-gradient(30deg, #0289e4 var(--percentage), rgba(250,217,55,1) 50%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: color-change ease-in-out 1s forwards;
-    }
+    background: linear-gradient(90deg, #0289e4 0%, #0289e4 30%, rgba(250,217,55,1) 60%, rgba(250,217,55,1) 100%);
 }
 .mail2{
-    color: #0289e4;
+    background: linear-gradient(90deg, rgba(250,217,55,1) 0%, rgba(250,217,55,1) 30%, #0289e4 60%, #0289e4 100%);
+
+}
+.mail, .mail2{
     text-transform: lowercase;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% auto;
+    background-position: 100% 50%;
     &:hover{
-        color:transparent;
-        background: -webkit-linear-gradient(30deg, rgba(250,217,55,1) var(--percentage),  #0289e4 50%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
         animation: color-change ease-in-out 1s forwards;
-        
     }
 }
+
 //first section
 .first-section{
     display: flex;
@@ -170,10 +166,11 @@ h3{
     justify-content: center;
     align-items: center;
     color:#fff;
+    position:relative;
     .img-container{
         box-sizing: border-box;
         width:40%;
-        height: 120%;
+        height: 110%;
         display: flex;
         justify-content: center;
         position:absolute;
@@ -675,8 +672,11 @@ footer{
     }
 }
 @keyframes color-change {
-    100%{
-        --percentage: 100%;
+    0% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
     }
 }
 @keyframes dash {
